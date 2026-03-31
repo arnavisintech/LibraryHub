@@ -1,0 +1,17 @@
+{
+  "name": "library-dashboard-server",
+  "version": "1.0.0",
+  "description": "Library Management Dashboard — Backend API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "seed": "node db/seed.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.7.0",
+    "cors": "^2.8.6",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
