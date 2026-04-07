@@ -1,6 +1,6 @@
 # LibraryHub — Library Management Dashboard
 
-A full-stack Library Management System with a **Next.js** frontend and **Express** backend.
+A full-stack Library Management System with a **React.js** frontend and **Express** backend.
 
 **Course:** Web Programming (24BCE1947) | VIT Chennai
 
@@ -10,7 +10,7 @@ A full-stack Library Management System with a **Next.js** frontend and **Express
 
 ```
 project/
-├── client/          # Next.js 16 frontend (port 3001)
+├── client/          # React.js 16 frontend (port 3001)
 │   └── app/
 │       ├── login/         # Login page
 │       ├── dashboard/     # Dashboard with charts
@@ -97,7 +97,7 @@ App running at `http://localhost:3001`
 
 | Layer      | Technology                              |
 |------------|-----------------------------------------|
-| Frontend   | Next.js 16 (App Router), React 19       |
+| Frontend   | React.js 16 (App Router), React 19       |
 | Charts     | Recharts                                |
 | Icons      | Lucide React                            |
 | Backend    | Node.js + Express                       |
@@ -127,3 +127,9 @@ App running at `http://localhost:3001`
 - The backend must be running **before** opening the frontend.
 - If the database is corrupted or missing, re-run `node db/seed.js` from the `server/` directory.
 - JWT tokens expire after 24 hours. Log in again if redirected to `/login`.
+arnavjain
+
+- <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/d403a483-f362-4645-b4d6-39e1b33390f4" />
+<img width="1920" height="1020" alt="Screenshot 2026-03-31 084840" src="https://github.com/user-attachments/assets/edf47511-045e-4add-aa8c-38ed875c7342" />
+<img width="1920" height="1020" alt="Screenshot 2026-03-31 084845" src="https://github.com/user-attachments/assets/6c7b18d5-0001-4b5e-a4ea-dedf5e72f514" />
+<img width="1920" height="1020" alt="Screenshot 2026-03-31 084834" src="https://github.com/user-attachments/assets/cac561fa-bce2-4200-8cbe-47b46cb37334" />

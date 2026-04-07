@@ -2,9 +2,9 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const db = require('../db/database');
+const { JWT_SECRET } = require('../config/constants');
 
 const router = express.Router();
-const JWT_SECRET = 'library_dashboard_secret_key_2024';
 
 router.post('/login', (req, res) => {
     const { username, password } = req.body;

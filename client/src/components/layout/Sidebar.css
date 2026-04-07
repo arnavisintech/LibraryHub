@@ -1,0 +1,205 @@
+/* ═══════════════════════════════════════════════
+   SIDEBAR — Light dashboard + animated blue pill
+   ═══════════════════════════════════════════════ */
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  transition: transform 0.25s ease, background 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Logo area ── */
+.sidebar-header {
+  padding: 20px 18px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.sidebar-logo {
+  width: 36px;
+  height: 36px;
+  background: var(--accent);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(43, 89, 254, 0.3);
+}
+
+.sidebar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+}
+
+.sidebar-subtitle {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 1px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Nav ── */
+.sidebar-nav {
+  flex: 1;
+  padding: 8px 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-section-title {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  padding: 6px 12px;
+  font-weight: 600;
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+/* ── Nav item — relative box for absolute pill ── */
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  color: var(--sidebar-text);
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+  z-index: 0;
+  transition: color 0.12s ease;
+}
+
+.sidebar-nav-item:hover {
+  color: var(--text-primary);
+}
+/* Light hover bg, but NOT when the pill is present */
+.sidebar-nav-item:not(.sidebar-active):hover {
+  background: var(--sidebar-hover);
+}
+
+/* ── Sliding blue pill (framer layoutId) ── */
+.sidebar-pill {
+  position: absolute;
+  inset: 0;
+  background: var(--sidebar-active-bg);
+  border-radius: var(--radius);
+  z-index: -1;
+  box-shadow: 0 2px 8px rgba(43, 89, 254, 0.25);
+}
+
+/* Active state text + icon */
+.sidebar-nav-item.sidebar-active {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.sidebar-nav-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar-nav-item.sidebar-active .sidebar-nav-icon-wrap {
+  color: #ffffff;
+}
+
+.sidebar-nav-label {
+  white-space: nowrap;
+}
+
+/* ── Theme Toggle ── */
+.sidebar-theme-toggle {
+  display: flex;
+  align-items: center;
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 3px;
+  gap: 0;
+  margin: 0 12px 6px;
+}
+.sidebar-theme-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 0;
+  border: none;
+  border-radius: 20px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+.sidebar-theme-btn.active {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+.sidebar-theme-btn:hover:not(.active) {
+  color: var(--text-secondary);
+}
+
+/* ── Footer ── */
+.sidebar-footer {
+  padding: 10px 12px 14px;
+  border-top: 1px solid var(--sidebar-border);
+  flex-shrink: 0;
+}
+
+.sidebar-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  color: var(--sidebar-text);
+  font-size: 0.875rem;
+  font-weight: 400;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sidebar-logout-btn:hover {
+  color: var(--danger);
+  background: var(--danger-bg);
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-xl);
+  }
+}

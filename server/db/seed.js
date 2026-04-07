@@ -2,13 +2,16 @@ const db = require('./database');
 const bcrypt = require('bcryptjs');
 
 // Clear existing data
+db.exec('DELETE FROM fines');
+db.exec('DELETE FROM reservations');
 db.exec('DELETE FROM issues');
 db.exec('DELETE FROM books');
 db.exec('DELETE FROM members');
+db.exec('DELETE FROM notifications');
 db.exec('DELETE FROM users');
 
 // Reset auto-increment
-db.exec("DELETE FROM sqlite_sequence WHERE name IN ('users','books','members','issues')");
+db.exec("DELETE FROM sqlite_sequence WHERE name IN ('users','books','members','issues','fines','reservations','notifications')");
 
 const hashedPassword = bcrypt.hashSync('admin123', 10);
 const staffPassword = bcrypt.hashSync('staff123', 10);
@@ -98,10 +101,63 @@ const insertIssues = db.transaction(() => {
 });
 insertIssues();
 
+// ── Reservations ──
+const insertReservation = db.prepare('INSERT INTO reservations (book_id, member_id, reserved_at, status) VALUES (?, ?, ?, ?)');
+const reservations = [
+    [1, 3, daysFromNow(-3) + 'T10:00:00Z', 'pending'],
+    [4, 5, daysFromNow(-2) + 'T14:30:00Z', 'pending'],
+    [9, 6, daysFromNow(-1) + 'T09:15:00Z', 'pending'],
+    [7, 2, daysFromNow(-10) + 'T11:00:00Z', 'fulfilled'],
+    [3, 7, daysFromNow(-8) + 'T16:45:00Z', 'fulfilled'],
+    [15, 4, daysFromNow(-6) + 'T08:30:00Z', 'cancelled'],
+    [2, 9, daysFromNow(-5) + 'T13:20:00Z', 'pending'],
+    [11, 10, daysFromNow(-4) + 'T15:00:00Z', 'fulfilled'],
+];
+
+const insertReservations = db.transaction(() => {
+    for (const r of reservations) insertReservation.run(...r);
+});
+insertReservations();
+
+// ── Fines (only for returned issues — overdue fines are calculated dynamically) ──
+const insertFine = db.prepare('INSERT INTO fines (issue_id, member_id, amount, paid, paid_date) VALUES (?, ?, ?, ?, ?)');
+const fines = [
+    // Returned issues — historical fines (paid)
+    [11, 2, 0, 1, '2024-11-14'],  // Returned on time — no fine
+    [12, 3, 0, 1, '2024-11-22'],  // Returned on time
+    [13, 4, 4.00, 1, '2024-12-15'],  // Slight overdue — paid
+    [14, 6, 0, 1, '2025-01-18'],  // Returned on time
+    [15, 7, 0, 1, '2025-01-20'],  // Returned on time
+    // Note: Fines for currently overdue issues (8, 9, 10) are calculated dynamically
+];
+
+const insertFines = db.transaction(() => {
+    for (const f of fines) insertFine.run(...f);
+});
+insertFines();
+
+// ── Notifications / Announcements ──
+const insertNotification = db.prepare('INSERT INTO notifications (message, type, is_active, expires_at, created_by) VALUES (?, ?, ?, ?, ?)');
+const notifications = [
+    ['Library will be closed on April 14 for maintenance.', 'important', 1, daysFromNow(7), 1],
+    ['New books added to the Science Fiction section!', 'normal', 1, daysFromNow(14), 1],
+    ['Summer reading program starts May 1 — sign up at the front desk.', 'normal', 1, daysFromNow(30), 1],
+    ['Overdue fines have been updated. Please check your account.', 'important', 1, daysFromNow(3), 1],
+    ['Wi-Fi password changed. Ask staff for the new credentials.', 'normal', 0, null, 1],
+];
+
+const insertNotifications = db.transaction(() => {
+    for (const n of notifications) insertNotification.run(...n);
+});
+insertNotifications();
+
 console.log('✅ Database seeded successfully!');
 console.log('   Users: admin/admin123, staff/staff123');
 console.log(`   Books: ${books.length}`);
 console.log(`   Members: ${members.length}`);
 console.log(`   Issues: ${issues.length}`);
+console.log(`   Reservations: ${reservations.length}`);
+console.log(`   Fines: ${fines.length}`);
+console.log(`   Notifications: ${notifications.length}`);
 
 db.close();
