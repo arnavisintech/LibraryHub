@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(find . -type f -name *.json -o -name *.js -o -name *.sql -o -name *.db -o -name *.md -o -name *.env*)"
-    ]
-  }
-}
