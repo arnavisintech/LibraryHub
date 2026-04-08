@@ -167,8 +167,12 @@ Admin users have access to Announcements, User Management, and Settings pages.
 - Light/dark theme toggle is available in the sidebar.
 
 ## SCREENS
+<img width="1919" height="970" alt="Screenshot 2026-04-07 214819" src="https://github.com/user-attachments/assets/9fa3a1c9-82a9-4d57-ac63-419b48570f03" />
+<img width="1919" height="970" alt="Screenshot 2026-04-07 214840" src="https://github.com/user-attachments/assets/e9d7fe1f-8b53-4376-a5e9-4a8208a724cc" />
+<img width="1919" height="969" alt="Screenshot 2026-04-07 214847" src="https://github.com/user-attachments/assets/8aeac74d-53b4-4d0e-9d38-e1e05980ceea" />
+<img width="1919" height="965" alt="Screenshot 2026-04-07 215013" src="https://github.com/user-attachments/assets/bb0ada75-2a7e-4e41-bfe5-8e1629659ce6" />
+<img width="1919" height="969" alt="Screenshot 2026-04-07 215024" src="https://github.com/user-attachments/assets/028d6c1b-93e0-4428-b0de-45c663c155d5" />
 
-<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/d403a483-f362-4645-b4d6-39e1b33390f4" />
-<img width="1920" height="1020" alt="Screenshot 2026-03-31 084840" src="https://github.com/user-attachments/assets/edf47511-045e-4add-aa8c-38ed875c7342" />
-<img width="1920" height="1020" alt="Screenshot 2026-03-31 084845" src="https://github.com/user-attachments/assets/6c7b18d5-0001-4b5e-a4ea-dedf5e72f514" />
-<img width="1920" height="1020" alt="Screenshot 2026-03-31 084834" src="https://github.com/user-attachments/assets/cac561fa-bce2-4200-8cbe-47b46cb37334" />
+<img width="1919" height="969" alt="Screenshot 2<img width="1919" height="971" alt="Screenshot 2026-04-07 215029" src="https://github.com/user-attachments/assets/47cebb0e-91dd-4612-afa5-84169ea48994" />
+<img width="1919" height="971" alt="Screenshot 2026-04-07 215029" src="https://github.com/user-attachments/assets/872cfc43-15dc-4309-b76c-649d9ad9c3e3" />
+<img width="1919" height="968" alt="Screenshot 2026-04-07 215034" src="https://github.com/user-attachments/assets/78ef4344-8fb4-4cb8-9b52-a392c6a7d679" />
