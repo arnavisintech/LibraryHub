@@ -165,3 +165,10 @@ Admin users have access to Announcements, User Management, and Settings pages.
 - If the database is corrupted or missing, re-run `node db/seed.js` from the `server/` directory.
 - JWT tokens expire after 24 hours. Log in again if redirected to `/login`.
 - Light/dark theme toggle is available in the sidebar.
+
+## SCREENS
+
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/d403a483-f362-4645-b4d6-39e1b33390f4" />
+<img width="1920" height="1020" alt="Screenshot 2026-03-31 084840" src="https://github.com/user-attachments/assets/edf47511-045e-4add-aa8c-38ed875c7342" />
+<img width="1920" height="1020" alt="Screenshot 2026-03-31 084845" src="https://github.com/user-attachments/assets/6c7b18d5-0001-4b5e-a4ea-dedf5e72f514" />
+<img width="1920" height="1020" alt="Screenshot 2026-03-31 084834" src="https://github.com/user-attachments/assets/cac561fa-bce2-4200-8cbe-47b46cb37334" />
