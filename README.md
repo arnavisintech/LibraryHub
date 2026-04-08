@@ -172,7 +172,6 @@ Admin users have access to Announcements, User Management, and Settings pages.
 <img width="1919" height="969" alt="Screenshot 2026-04-07 214847" src="https://github.com/user-attachments/assets/8aeac74d-53b4-4d0e-9d38-e1e05980ceea" />
 <img width="1919" height="965" alt="Screenshot 2026-04-07 215013" src="https://github.com/user-attachments/assets/bb0ada75-2a7e-4e41-bfe5-8e1629659ce6" />
 <img width="1919" height="969" alt="Screenshot 2026-04-07 215024" src="https://github.com/user-attachments/assets/028d6c1b-93e0-4428-b0de-45c663c155d5" />
-
-<img width="1919" height="969" alt="Screenshot 2<img width="1919" height="971" alt="Screenshot 2026-04-07 215029" src="https://github.com/user-attachments/assets/47cebb0e-91dd-4612-afa5-84169ea48994" />
+<img width="1919" height="971" alt="Screenshot 2026-04-07 215029" src="https://github.com/user-attachments/assets/47cebb0e-91dd-4612-afa5-84169ea48994" />
 <img width="1919" height="971" alt="Screenshot 2026-04-07 215029" src="https://github.com/user-attachments/assets/872cfc43-15dc-4309-b76c-649d9ad9c3e3" />
 <img width="1919" height="968" alt="Screenshot 2026-04-07 215034" src="https://github.com/user-attachments/assets/78ef4344-8fb4-4cb8-9b52-a392c6a7d679" />
